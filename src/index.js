@@ -1,24 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/App';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TeacherDashboard from './pages/TeacherDashboard';
-import ParentDashboard from './pages/ParentDashboard';
-import Login from './pages/Login';
+import App from './App';
+import store from './app/store'
+import { Provider } from 'react-redux'
+
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/teacher" element={<TeacherDashboard />} />
-      <Route path="/parent" element={<ParentDashboard />} />
-      <Route path="/login" element={<Login />} />
-    </Routes>
-  </BrowserRouter>
+  <Provider store={store}>
+    <App />
+  </Provider>,
 
 );
 

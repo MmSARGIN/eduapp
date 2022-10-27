@@ -1,22 +1,37 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import Lessons from "./Lessons";
+import { useSelector, useDispatch } from 'react-redux';
+import { router } from "../slices/routeSlice";
 
 const Sidebar = (props) => {
+    console.log("props", props);
+
+    const dispatch = useDispatch()
     const [isteacher, setisteacher] = useState(props.teacher);
 
-    return <div className="flex h-screen w-full flex-col justify-between border-r bg-gradient-to-b from-blue-600 to-teal-300">
+
+
+
+    return <div className="flex h-screen w-full text-sm overflow-y-scroll flex-col justify-between border-r bg-gradient-to-b from-blue-600 to-teal-300">
         <div className="px-4 py-6">
             {isteacher === true ? <span className="flex justify-center items-center font-medium p-4 w-full rounded-lg bg-gray-200">Teacher Dashboard</span> :
                 <span className="flex justify-center items-center font-medium p-4 w-full rounded-lg bg-gray-200">Ebeveyn Dashboard</span>}
 
 
             <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1">
-                <a
-                    href="/"
-                    className="flex items-center rounded-lg bg-gray-100 px-4 py-2 text-gray-700"
+                <button
+                    name="info"
+                    onClick={(e) => {
+                        props.setpath("info")
+                        dispatch(router(e.target.name))
+                    }}
+
+                    className="flex items-center rounded-lg cursor-pointer pointer-events-auto bg-gray-100 px-4 py-2 text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 opacity-75"
+                        className="h-5 w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -33,17 +48,19 @@ const Sidebar = (props) => {
                             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                     </svg>
+                    Profil Bilgileri
+                    {/* <span className="ml-3 text-sm font-medium">Profil Bilgileri</span> */}
+                </button>
 
-                    <span className="ml-3 text-sm font-medium">Profil Bilgileri</span>
-                </a>
+                <details
 
-                <details className="group">
+                    className="group">
                     <summary
                         className="flex cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 opacity-75"
+                            className="h-5 w-5 mr-3 opacity-75"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -55,8 +72,8 @@ const Sidebar = (props) => {
                                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
                             />
                         </svg>
-
-                        <span className="ml-3 text-sm font-medium">Ödevler</span>
+                        Ödevler
+                        {/* <span className="ml-3 text-sm font-medium">Ödevler</span> */}
 
                         <span
                             className="ml-auto shrink-0 transition duration-300 group-open:-rotate-180"
@@ -77,13 +94,17 @@ const Sidebar = (props) => {
                     </summary>
 
                     <nav aria-label="Teams Nav" className="mt-1.5 ml-8 flex flex-col">
-                        {isteacher ? <a
-                            href="/"
+                        {isteacher ? <button
+                            name="homework"
+                            onClick={(e) => {
+                                props.setpath("homework")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -95,16 +116,20 @@ const Sidebar = (props) => {
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                 />
                             </svg>
-
-                            <span className="ml-3 text-sm font-medium">Yeni Ödev Ataması</span>
-                        </a> : null}
-                        <a
-                            href="/"
+                            Yeni Ödev Ataması
+                            {/* <span className="ml-3 text-sm font-medium">Yeni Ödev Ataması</span> */}
+                        </button> : null}
+                        <button
+                            name="homework"
+                            onClick={(e) => {
+                                props.setpath("homework")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -116,17 +141,21 @@ const Sidebar = (props) => {
                                     d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
                                 />
                             </svg>
+                            Tamamlanmış Ödevler
+                            {/* <span className="ml-3 text-sm font-medium">Tamamlanmış Ödevler</span> */}
+                        </button>
 
-                            <span className="ml-3 text-sm font-medium">Tamamlanmış Ödevler</span>
-                        </a>
-
-                        <a
-                            href="/"
+                        <button
+                            name="homework"
+                            onClick={(e) => {
+                                props.setpath("homework")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -138,19 +167,23 @@ const Sidebar = (props) => {
                                     d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                                 />
                             </svg>
-
-                            <span className="ml-3 text-sm font-medium">Bekleyen Ödevler</span>
-                        </a>
+                            Bekleyen Ödevler
+                            {/* <span className="ml-3 text-sm font-medium">Bekleyen Ödevler</span> */}
+                        </button>
                     </nav>
                 </details>
 
-                <a
-                    href="/"
+                <button
+                    name="program"
+                    onClick={(e) => {
+                        props.setpath("program")
+                        dispatch(router(e.target.name))
+                    }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 opacity-75"
+                        className="h-5 w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -162,17 +195,21 @@ const Sidebar = (props) => {
                             d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                         />
                     </svg>
+                    Ders Programı
+                    {/* <span className="ml-3 text-sm font-medium">Ders Programı</span> */}
+                </button>
 
-                    <span className="ml-3 text-sm font-medium">Ders Programı</span>
-                </a>
-
-                <a
-                    href="/"
+                <button
+                    name="announcement"
+                    onClick={(e) => {
+                        props.setpath("announcement")
+                        dispatch(router(e.target.name))
+                    }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 opacity-75"
+                        className="h-5 w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -184,16 +221,20 @@ const Sidebar = (props) => {
                             d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                         />
                     </svg>
-
-                    <span className="ml-3 text-sm font-medium">Genel Duyurular</span>
-                </a>
-                {isteacher ? <a
-                    href="/"
+                    Genel Duyurular
+                    {/* <span className="ml-3 text-sm font-medium">Genel Duyurular</span> */}
+                </button>
+                {isteacher ? <button
+                    name="announcement"
+                    onClick={(e) => {
+                        props.setpath("annoucement")
+                        dispatch(router(e.target.name))
+                    }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 opacity-75"
+                        className="h-5 w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -205,16 +246,16 @@ const Sidebar = (props) => {
                             d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                         />
                     </svg>
-
-                    <span className="ml-3 text-sm font-medium">Duyuru Yayınla</span>
-                </a> : null}
+                    Duyuru Yayınla
+                    {/* <span className="ml-3 text-sm font-medium">Duyuru Yayınla</span> */}
+                </button> : null}
                 {isteacher ? <details className="group">
                     <summary
                         className="flex cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 opacity-75"
+                            className="h-5 w-5 mr-3 opacity-75"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -226,8 +267,8 @@ const Sidebar = (props) => {
                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                             />
                         </svg>
-
-                        <span className="ml-3 text-sm font-medium">Sınıflarım</span>
+                        Sınıflarım
+                        {/* <span className="ml-3 text-sm font-medium">Sınıflarım</span> */}
 
                         <span
                             className="ml-auto shrink-0 transition duration-300 group-open:-rotate-180"
@@ -248,13 +289,17 @@ const Sidebar = (props) => {
                     </summary>
 
                     <nav aria-label="Account Nav" className="mt-1.5 ml-8 flex flex-col">
-                        <a
-                            href="/"
+                        <button
+                            name="student"
+                            onClick={(e) => {
+                                props.setpath("student")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -266,17 +311,21 @@ const Sidebar = (props) => {
                                     d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
                                 />
                             </svg>
+                            Öğrenci Bilgileri
+                            {/* <span className="ml-3 text-sm font-medium">Öğrenci Bilgileri</span> */}
+                        </button>
 
-                            <span className="ml-3 text-sm font-medium">Öğrenci Bilgileri</span>
-                        </a>
-
-                        <a
-                            href="/"
+                        <button
+                            name="parent"
+                            onClick={(e) => {
+                                props.setpath("parent")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -288,18 +337,23 @@ const Sidebar = (props) => {
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                                 />
                             </svg>
-
-                            <span className="ml-3 text-sm font-medium">Veli Bilgileri</span>
-                        </a>
+                            Veli Bilgileri
+                            {/* <span className="ml-3 text-sm font-medium">Veli Bilgileri</span> */}
+                        </button>
 
                         <form action="/logout">
                             <button
+                                name="absenteeism"
+                                onClick={(e) => {
+                                    props.setpath("absenteeism")
+                                    dispatch(router(e.target.name))
+                                }}
                                 type="submit"
                                 className="flex w-full items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    className="h-5 w-5 opacity-75"
+                                    className="h-5 w-5 mr-3 opacity-75"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -311,20 +365,24 @@ const Sidebar = (props) => {
                                         d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
                                     />
                                 </svg>
-
-                                <span className="ml-3 text-sm font-medium">Servis Bilgileri</span>
+                                Servis Bilgileri
+                                {/* <span className="ml-3 text-sm font-medium">Servis Bilgileri</span> */}
                             </button>
                         </form>
                     </nav>
                 </details> : null}
 
-                <a
-                    href="/"
+                <button
+                    name="absenteeism"
+                    onClick={(e) => {
+                        props.setpath("absenteeeism")
+                        dispatch(router(e.target.name))
+                    }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 opacity-75"
+                        className="h-5 w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -336,9 +394,9 @@ const Sidebar = (props) => {
                             d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"
                         />
                     </svg>
-
-                    <span className="ml-3 text-sm font-medium">Öğrenci Devam Durumu</span>
-                </a>
+                    Öğrenci Devam Durumu
+                    {/* <span className="ml-3 text-sm font-medium">Öğrenci Devam Durumu</span> */}
+                </button>
 
                 <details className="group">
                     <summary
@@ -346,7 +404,7 @@ const Sidebar = (props) => {
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 opacity-75"
+                            className="h-5 w-5 mr-3 opacity-75"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -358,8 +416,8 @@ const Sidebar = (props) => {
                                 d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
                             />
                         </svg>
-
-                        <span className="ml-3 text-sm font-medium">Servis - Şoför Bilgileri</span>
+                        Servis - Şoför Bilgileri
+                        {/* <span className="ml-3 text-sm font-medium">Servis - Şoför Bilgileri</span> */}
 
                         <span
                             className="ml-auto shrink-0 transition duration-300 group-open:-rotate-180"
@@ -380,13 +438,17 @@ const Sidebar = (props) => {
                     </summary>
 
                     <nav aria-label="Account Nav" className="mt-1.5 ml-8 flex flex-col">
-                        <a
-                            href="/"
+                        <button
+                            name="location"
+                            onClick={(e) => {
+                                props.setpath("location")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -398,17 +460,21 @@ const Sidebar = (props) => {
                                     d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
                                 />
                             </svg>
+                            Konum Bilgisi
+                            {/* <span className="ml-3 text-sm font-medium">Konum Bilgisi</span> */}
+                        </button>
 
-                            <span className="ml-3 text-sm font-medium">Konum Bilgisi</span>
-                        </a>
-
-                        <a
-                            href="/"
+                        <button
+                            name="driver"
+                            onClick={(e) => {
+                                props.setpath("driver")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -420,16 +486,20 @@ const Sidebar = (props) => {
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                                 />
                             </svg>
-
-                            <span className="ml-3 text-sm font-medium">Şoför İletişim</span>
-                        </a>
-                        <a
-                            href="/"
+                            Şoför İletişim
+                            {/* <span className="ml-3 text-sm font-medium">Şoför İletişim</span> */}
+                        </button>
+                        <button
+                            name="service"
+                            onClick={(e) => {
+                                props.setpath("service")
+                                dispatch(router(e.target.name))
+                            }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5 opacity-75"
+                                className="h-5 w-5 mr-3 opacity-75"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -441,9 +511,9 @@ const Sidebar = (props) => {
                                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                                 />
                             </svg>
-
-                            <span className="ml-3 text-sm font-medium">Araç Güzergah</span>
-                        </a>
+                            Araç Güzergah
+                            {/* <span className="ml-3 text-sm font-medium">Araç Güzergah</span> */}
+                        </button>
 
                         {/* <form action="/logout">
                             <button

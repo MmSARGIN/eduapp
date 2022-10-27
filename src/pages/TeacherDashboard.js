@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+
 import Lessons from "../components/Lessons";
 import Navbar from "../components/Navbar";
 import Profil from "../components/Profil";
@@ -6,14 +8,30 @@ import Sidebar from "../components/Sidebar";
 
 const TeacherDashboard = () => {
     const [teacher, setteacher] = useState(true);
+    const [path, setpath] = useState(true);
+    const route = useSelector(state => {
+        console.log("burası", state.router.default)
 
-    return <div className="flex justify-between">
+    })
+    return <div className="flex">
         <div className="flex-col w-1/4">
             {/* <Navbar /> */}
-            <Sidebar teacher={teacher} />
+            <Sidebar path={path} setpath={setpath} teacher={teacher} />
         </div>
-        {/* <Profil /> */}
-        <Lessons />
+
+
+        <div className="w-3/4 justify-center items-center ">
+            {/* <Profil /> */}
+            {
+
+
+                path === "info" ? <Profil /> : path === "homework" ? <Lessons /> : "s"
+
+
+            }
+
+        </div>
+
     </div>;
 };
 
