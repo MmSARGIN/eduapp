@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Sidebar = (props) => {
     const [isteacher, setisteacher] = useState(props.teacher);
 
-    return <div className="flex h-screen w-full md:w-1/4 flex-col justify-between border-r bg-gradient-to-b from-blue-600 to-teal-300">
+    return <div className="flex h-screen w-full flex-col justify-between border-r bg-gradient-to-b from-blue-600 to-teal-300">
         <div className="px-4 py-6">
             {isteacher === true ? <span className="flex justify-center items-center font-medium p-4 w-full rounded-lg bg-gray-200">Teacher Dashboard</span> :
                 <span className="flex justify-center items-center font-medium p-4 w-full rounded-lg bg-gray-200">Ebeveyn Dashboard</span>}
