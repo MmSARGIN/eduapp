@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import Announcements from "../components/Announcements";
 
 import Lessons from "../components/Lessons";
 import Navbar from "../components/Navbar";
@@ -25,7 +26,7 @@ const TeacherDashboard = () => {
             {
 
 
-                path === "info" ? <Profil /> : path === "homework" ? <Lessons /> : "s"
+                path === "info" ? <Profil /> : path === "program" ? <Lessons /> : path === "announcement" ? <Announcements /> : "s"
 
 
             }

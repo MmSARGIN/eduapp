@@ -27,7 +27,7 @@ const Sidebar = (props) => {
                         dispatch(router(e.target.name))
                     }}
 
-                    className="flex items-center rounded-lg cursor-pointer pointer-events-auto bg-gray-100 px-4 py-2 text-gray-700"
+                    className="flex items-center rounded-lg cursor-pointer pointer-events-auto  px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import Announcements from "../components/Announcements";
 
 import Lessons from "../components/Lessons";
 import Navbar from "../components/Navbar";
@@ -13,7 +14,7 @@ const ParentDashboard = () => {
         console.log("burası", state.router.default)
 
     })
-    return <div className="flex">
+    return <div className="flex bg-white">
         <div className="flex-col w-1/4">
             {/* <Navbar /> */}
             <Sidebar path={path} setpath={setpath} />
@@ -25,7 +26,7 @@ const ParentDashboard = () => {
             {
 
 
-                path === "info" ? <Profil /> : path === "homework" ? <Lessons /> : "s"
+                path === "info" ? <Profil /> : path === "program" ? <Lessons /> : path === "announcement" ? <Announcements /> : "s"
 
 
             }

@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import TeacherDashboard from "./pages/TeacherDashboard"
 import ParentDashboard from "./pages/ParentDashboard"
+import Home from './pages/Home';
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <BrowserRouter>
       {/* <Navbar /> */}
       <Routes>
-        {/* <Route path='/' element={} /> */}
+        <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/teacher' element={<TeacherDashboard />} />
         <Route path='/parent' element={<ParentDashboard />} />
