@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginAll = () => {
+    const [person, setperson] = useState();
+    const navigate = useNavigate();
+
     return <div className="bg-gray-300">
         <section>
             <div className="mx-auto max-w-screen-xl px-4 py-6 sm:px-6 lg:px-8">
@@ -74,6 +78,9 @@ const LoginAll = () => {
                                         value="Ogrenci"
                                         id="Ogrenci"
                                         className="peer hidden"
+                                        onChange={(e) => {
+                                            setperson(e.target.value);
+                                        }}
 
                                     />
                                     <label
@@ -93,6 +100,9 @@ const LoginAll = () => {
                                         value="Ogretmen"
                                         id="Ogretmen"
                                         className="peer hidden"
+                                        onChange={(e) => {
+                                            setperson(e.target.value);
+                                        }}
                                     />
 
                                     <label
@@ -106,6 +116,9 @@ const LoginAll = () => {
                             <div className="">
                                 <button
                                     type="submit"
+                                    onClick={() => {
+                                        person === "Ogretmen" ? navigate("/teacher") : navigate("/parent");
+                                    }}
                                     className="inline-flex w-full items-center justify-center rounded-lg bg-gradient-to-r from-red-500 to-red-200 px-5 py-3 text-white sm:w-auto"
                                 >
                                     <span className="font-medium">Giris Yap</span>

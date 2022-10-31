@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-    return <div>
+    return <div className="flex w-full bg-transparent justify-around">
         <Link to="/">HOME</Link>
         <br />
         <Link to="/teacher">TEACHER</Link>

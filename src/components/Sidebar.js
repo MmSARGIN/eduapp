@@ -6,7 +6,7 @@ import { router } from "../slices/routeSlice";
 
 const Sidebar = (props) => {
     console.log("props", props);
-
+    const [menu, setmenu] = useState(true);
     const dispatch = useDispatch()
     const [isteacher, setisteacher] = useState(props.teacher);
 
@@ -24,6 +24,7 @@ const Sidebar = (props) => {
                     name="info"
                     onClick={(e) => {
                         props.setpath("info")
+                        props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
 
@@ -98,6 +99,7 @@ const Sidebar = (props) => {
                             name="homework"
                             onClick={(e) => {
                                 props.setpath("homework")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -123,6 +125,7 @@ const Sidebar = (props) => {
                             name="homework"
                             onClick={(e) => {
                                 props.setpath("homework")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -149,6 +152,7 @@ const Sidebar = (props) => {
                             name="homework"
                             onClick={(e) => {
                                 props.setpath("homework")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -172,11 +176,38 @@ const Sidebar = (props) => {
                         </button>
                     </nav>
                 </details>
+                <button
+                    name="meet"
+                    onClick={(e) => {
+                        props.setpath("meet")
+                        props.setmenu(false)
+                        dispatch(router(e.target.name))
+                    }}
+                    className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-3 opacity-75"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+                        />
+                    </svg>
+                    Öğretmenden Randevu Al
+                    {/* <span className="ml-3 text-sm font-medium">Ders Programı</span> */}
+                </button>
 
                 <button
                     name="program"
                     onClick={(e) => {
                         props.setpath("program")
+                        props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -203,6 +234,7 @@ const Sidebar = (props) => {
                     name="announcement"
                     onClick={(e) => {
                         props.setpath("announcement")
+                        props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -228,6 +260,7 @@ const Sidebar = (props) => {
                     name="announcement"
                     onClick={(e) => {
                         props.setpath("annoucement")
+                        props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -293,6 +326,7 @@ const Sidebar = (props) => {
                             name="student"
                             onClick={(e) => {
                                 props.setpath("student")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -319,6 +353,7 @@ const Sidebar = (props) => {
                             name="parent"
                             onClick={(e) => {
                                 props.setpath("parent")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -346,6 +381,7 @@ const Sidebar = (props) => {
                                 name="absenteeism"
                                 onClick={(e) => {
                                     props.setpath("absenteeism")
+                                    props.setmenu(false)
                                     dispatch(router(e.target.name))
                                 }}
                                 type="submit"
@@ -376,6 +412,7 @@ const Sidebar = (props) => {
                     name="absenteeism"
                     onClick={(e) => {
                         props.setpath("absenteeeism")
+                        props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -442,6 +479,7 @@ const Sidebar = (props) => {
                             name="location"
                             onClick={(e) => {
                                 props.setpath("location")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -468,6 +506,7 @@ const Sidebar = (props) => {
                             name="driver"
                             onClick={(e) => {
                                 props.setpath("driver")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -493,6 +532,7 @@ const Sidebar = (props) => {
                             name="service"
                             onClick={(e) => {
                                 props.setpath("service")
+                                props.setmenu(false)
                                 dispatch(router(e.target.name))
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
