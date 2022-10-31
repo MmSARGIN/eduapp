@@ -6,6 +6,8 @@ import Lessons from "../components/Lessons";
 import Navbar from "../components/Navbar";
 import Profil from "../components/Profil";
 import Sidebar from "../components/Sidebar";
+import Meet from "../components/Meet";
+import CreateAnnouncement from "../components/CreateAnnouncement";
 
 const TeacherDashboard = () => {
     const [teacher, setteacher] = useState(true);
@@ -15,7 +17,7 @@ const TeacherDashboard = () => {
         console.log("burası", state.router.default)
 
     })
-    return <div className="flex bg-white">
+    return <div className=" flex flex-col sm:flex-row bg-white">
         <div>
             <div class="flex sm:hidden">
 
@@ -59,12 +61,12 @@ const TeacherDashboard = () => {
             <Sidebar teacher={teacher} menu={menu} setmenu={setmenu} path={path} setpath={setpath} />
         </div>
 
-        <div className="w-3/4 flex justify-center items-center ">
+        <div className="w-full flex justify-center  items-center ">
             {/* <Profil /> */}
             {
 
 
-                path === "info" ? <Profil /> : path === "program" ? <Lessons /> : path === "announcement" ? <Announcements /> : "s"
+                path === "info" ? <Profil /> : path === "program" ? <Lessons /> : path === "announcement" ? <Announcements /> : path === "meet" ? <Meet /> : path === "createAnnouncement" ? <CreateAnnouncement /> : "Gelmedi"
 
 
             }

@@ -257,9 +257,9 @@ const Sidebar = (props) => {
                     {/* <span className="ml-3 text-sm font-medium">Genel Duyurular</span> */}
                 </button>
                 {isteacher ? <button
-                    name="announcement"
+                    name="createAnnouncement"
                     onClick={(e) => {
-                        props.setpath("annoucement")
+                        props.setpath("createAnnouncement")
                         props.setmenu(false)
                         dispatch(router(e.target.name))
                     }}
