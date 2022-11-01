@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Lessons from "./Lessons";
 import { useSelector, useDispatch } from 'react-redux';
 import { router } from "../slices/routeSlice";
+import { useNavigate } from "react-router-dom";
+
 
 const Sidebar = (props) => {
     console.log("props", props);
+    const navigate = useNavigate();
     const [menu, setmenu] = useState(true);
     const dispatch = useDispatch()
     const [isteacher, setisteacher] = useState(props.teacher);
+
+
+
 
 
 
@@ -23,9 +29,9 @@ const Sidebar = (props) => {
                 <button
                     name="info"
                     onClick={(e) => {
-                        props.setpath("info")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
+
+                        navigate("/profil")
                     }}
 
                     className="flex items-center rounded-lg cursor-pointer pointer-events-auto  px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -98,9 +104,9 @@ const Sidebar = (props) => {
                         {isteacher ? <button
                             name="homework"
                             onClick={(e) => {
-                                props.setpath("homework")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
+                                navigate("/homework")
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -124,9 +130,7 @@ const Sidebar = (props) => {
                         <button
                             name="homework"
                             onClick={(e) => {
-                                props.setpath("homework")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -151,9 +155,7 @@ const Sidebar = (props) => {
                         <button
                             name="homework"
                             onClick={(e) => {
-                                props.setpath("homework")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -179,9 +181,8 @@ const Sidebar = (props) => {
                 <button
                     name="meet"
                     onClick={(e) => {
-                        props.setpath("meet")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
+                        navigate("/meet")
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -206,9 +207,8 @@ const Sidebar = (props) => {
                 <button
                     name="program"
                     onClick={(e) => {
-                        props.setpath("program")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
+                        navigate("/program")
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -233,9 +233,8 @@ const Sidebar = (props) => {
                 <button
                     name="announcement"
                     onClick={(e) => {
-                        props.setpath("announcement")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
+                        navigate("/announcement")
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -259,9 +258,8 @@ const Sidebar = (props) => {
                 {isteacher ? <button
                     name="createAnnouncement"
                     onClick={(e) => {
-                        props.setpath("createAnnouncement")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
+                        navigate("/createAnnouncement")
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -325,9 +323,8 @@ const Sidebar = (props) => {
                         <button
                             name="student"
                             onClick={(e) => {
-                                props.setpath("student")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
+                                navigate("/student")
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -352,9 +349,7 @@ const Sidebar = (props) => {
                         <button
                             name="parent"
                             onClick={(e) => {
-                                props.setpath("parent")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -380,9 +375,7 @@ const Sidebar = (props) => {
                             <button
                                 name="absenteeism"
                                 onClick={(e) => {
-                                    props.setpath("absenteeism")
-                                    props.setmenu(false)
-                                    dispatch(router(e.target.name))
+
                                 }}
                                 type="submit"
                                 className="flex w-full items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
@@ -411,9 +404,7 @@ const Sidebar = (props) => {
                 <button
                     name="absenteeism"
                     onClick={(e) => {
-                        props.setpath("absenteeeism")
-                        props.setmenu(false)
-                        dispatch(router(e.target.name))
+
                     }}
                     className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                 >
@@ -478,9 +469,7 @@ const Sidebar = (props) => {
                         <button
                             name="location"
                             onClick={(e) => {
-                                props.setpath("location")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -505,9 +494,7 @@ const Sidebar = (props) => {
                         <button
                             name="driver"
                             onClick={(e) => {
-                                props.setpath("driver")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >
@@ -531,9 +518,7 @@ const Sidebar = (props) => {
                         <button
                             name="service"
                             onClick={(e) => {
-                                props.setpath("service")
-                                props.setmenu(false)
-                                dispatch(router(e.target.name))
+
                             }}
                             className="flex items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                         >

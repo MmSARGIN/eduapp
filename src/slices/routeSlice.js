@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const routeSlice = createSlice({
     name: 'route',
     initialState: {
-        default: "default"
+        page: ""
     },
     reducers: {
         router: (state, payload) => {

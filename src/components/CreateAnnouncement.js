@@ -1,12 +1,15 @@
 import React from "react";
+import TurnBack from "./TurnBack";
 
 const CreateAnnouncement = () => {
-    return <div className="bg-sky-400 w-full h-full flex items-center justify-center">
+    return <div className="w-full p-4 h-full">
+        <TurnBack />
+        <div className=" w-full h-full flex items-center justify-center">
 
 
-        <section >
-            <div class="grid grid-cols-12">
-                {/* <section
+            <section >
+                <div class="grid grid-cols-12">
+                    {/* <section
                     class="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6"
                 >
                     <img
@@ -42,119 +45,120 @@ const CreateAnnouncement = () => {
                     </div>
                 </section> */}
 
-                <main
-                    aria-label="Main"
-                    class="flex items-center justify-center px-8 py-8 sm:px-12  lg:py-12 lg:px-16 col-span-12"
-                >
-                    <div class="max-w-xl ">
+                    <main
+                        aria-label="Main"
+                        class="flex items-center justify-center px-8 py-8 sm:px-12  lg:py-12 lg:px-16 col-span-12"
+                    >
+                        <div class="max-w-xl ">
 
 
-                        <form action="#" class="mt-8 grid grid-cols-6 gap-6">
-                            <div class="col-span-6 sm:col-span-3">
+                            <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+                                <div class="col-span-6 sm:col-span-3">
 
 
 
-                                <label
-                                    for="UserEmail"
-                                    class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-                                >
-                                    <input
-                                        type="text"
-                                        id="UserEmail"
-                                        placeholder="Title"
-                                        class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-
-                                    <span
-                                        class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                    <label
+                                        for="UserEmail"
+                                        class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                                     >
-                                        Title
-                                    </span>
-                                </label>
+                                        <input
+                                            type="text"
+                                            id="UserEmail"
+                                            placeholder="Title"
+                                            class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        />
 
-                            </div>
+                                        <span
+                                            class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                        >
+                                            Title
+                                        </span>
+                                    </label>
 
-                            <div class="col-span-6 sm:col-span-3">
-                                <label
-                                    for="brans"
-                                    class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-                                >
-                                    <input
-                                        type="text"
-                                        id="brans"
-                                        placeholder="Branş"
-                                        class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
+                                </div>
 
-                                    <span
-                                        class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                <div class="col-span-6 sm:col-span-3">
+                                    <label
+                                        for="brans"
+                                        class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                                     >
-                                        Branş
-                                    </span>
-                                </label>
-                            </div>
+                                        <input
+                                            type="text"
+                                            id="brans"
+                                            placeholder="Branş"
+                                            class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        />
 
-                            <div class="col-span-6">
-                                <label
-                                    for="ogretmen"
-                                    class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-                                >
-                                    <input
-                                        type="text"
-                                        id="ogretmen"
-                                        placeholder="Öğretmen"
-                                        class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
+                                        <span
+                                            class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                        >
+                                            Branş
+                                        </span>
+                                    </label>
+                                </div>
 
-                                    <span
-                                        class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                <div class="col-span-6">
+                                    <label
+                                        for="ogretmen"
+                                        class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                                     >
-                                        Öğretmen
-                                    </span>
-                                </label>
-                            </div>
+                                        <input
+                                            type="text"
+                                            id="ogretmen"
+                                            placeholder="Öğretmen"
+                                            class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        />
+
+                                        <span
+                                            class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                        >
+                                            Öğretmen
+                                        </span>
+                                    </label>
+                                </div>
 
 
 
-                            <div class="col-span-6">
-                                <label
-                                    for="text"
-                                    class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
-                                >
-                                    <textarea
-                                        type="text"
-                                        id="text"
-                                        placeholder="Metin"
-                                        class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
-                                    />
-
-                                    <span
-                                        class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                <div class="col-span-6">
+                                    <label
+                                        for="text"
+                                        class="relative block bg-white overflow-hidden rounded-md border border-gray-200 px-3 pt-3 shadow-sm focus-within:border-blue-600 focus-within:ring-1 focus-within:ring-blue-600"
                                     >
-                                        Duyuru Metninizi Giriniz
-                                    </span>
-                                </label>
-                            </div>
+                                        <textarea
+                                            type="text"
+                                            id="text"
+                                            placeholder="Metin"
+                                            class="peer h-8 w-full border-none bg-white p-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 sm:text-sm"
+                                        />
+
+                                        <span
+                                            class="absolute left-3 top-2 -translate-y-1/2 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-2 peer-focus:text-xs"
+                                        >
+                                            Duyuru Metninizi Giriniz
+                                        </span>
+                                    </label>
+                                </div>
 
 
 
 
 
-                            <div class="col-span-6 sm:flex sm:items-center justify-center">
-                                <button
-                                    class="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                                >
-                                    Duyuru Yayınla
-                                </button>
+                                <div class="col-span-6 sm:flex sm:items-center justify-center">
+                                    <button
+                                        class="inline-block shrink-0 rounded-md border border-none bg-gradient-to-r from-blue-500 to-teal-400 px-12 py-3 text-sm font-medium transition hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-blue-500"
+                                    >
+                                        Duyuru Yayınla
+                                    </button>
 
 
-                            </div>
-                        </form>
-                    </div>
-                </main>
-            </div>
-        </section>
+                                </div>
+                            </form>
+                        </div>
+                    </main>
+                </div>
+            </section>
 
+        </div>
     </div>;
 };
 

@@ -1,8 +1,10 @@
 import React from "react";
+import TurnBack from "./TurnBack";
 
 const Profil = () => {
     return <div>
         <div class="w-full bg-white rounded-xl overflow-hidden  shadow-md p-4 h-full">
+            <TurnBack />
             <div class="flex flex-wrap justify-center">
                 <div class="w-48 px-4 ">
                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/1.webp" alt="falan" class="rounded-full shadow-lg max-w-full h-auto align-middle border-none undefined" />
