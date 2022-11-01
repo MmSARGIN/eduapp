@@ -63,7 +63,7 @@ const Sidebar = (props) => {
 
                     className="group">
                     <summary
-                        className="flex cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
+                        className="flex list-none cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 hidden sm:flex w-5"
+                                className="h-5 w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
@@ -282,7 +282,7 @@ const Sidebar = (props) => {
                 </button> : null}
                 {isteacher ? <details className="group">
                     <summary
-                        className="flex cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
+                        className="flex list-none cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -306,7 +306,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 hidden sm:flex w-5"
+                                className="h-5 w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
@@ -428,7 +428,7 @@ const Sidebar = (props) => {
 
                 <details className="group">
                     <summary
-                        className="flex cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
+                        className="flex list-none cursor-pointer items-center rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -452,7 +452,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 hidden sm:flex w-5"
+                                className="h-5  w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
