@@ -87,7 +87,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-5 hidden sm:flex w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
@@ -306,7 +306,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-5 hidden sm:flex w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
@@ -410,7 +410,7 @@ const Sidebar = (props) => {
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 mr-3 opacity-75"
+                        className="h-5  w-5 mr-3 opacity-75"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -432,7 +432,7 @@ const Sidebar = (props) => {
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5 mr-3 opacity-75"
+                            className="h-5 w-5  mr-3 opacity-75"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -452,7 +452,7 @@ const Sidebar = (props) => {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-5 w-5"
+                                className="h-5 hidden sm:flex w-5"
                                 viewBox="0 0 20 20"
                                 fill="currentColor"
                             >
